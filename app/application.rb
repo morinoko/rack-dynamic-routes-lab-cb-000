@@ -7,7 +7,7 @@ class Application
     @@items = []
     
     if req.path.match(/items/)
-      item_name_in_path = req.path.split("/items").last
+      item_name_in_path = req.path.split("/items/").last
       
       searched_item = @@items.find { |item| item.name == item_name_in_path }
       
