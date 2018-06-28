@@ -14,6 +14,6 @@ class Item
   end
   
   def self.find_by_name(name)
-    self.all.select { |item| item.name == name }.first
+    self.all.find { |item| item.name == name }.first
   end
 end
