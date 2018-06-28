@@ -9,7 +9,7 @@ class Application
     if req.path.match(/items/)
       item_name_in_path = req.path.split("/items").last
       
-      search_item = @@items.find { |item| item.name == item_name_in_path }
+      searched_item = @@items.find { |item| item.name == item_name_in_path }
       
       if searched_item 
         resp.write item.price
