@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       item_name_in_path = req.path.split("/items").last
       
-      item = Item.all.select { |item| item.name == item_name_in_path }.first
+      item = Item.find_by_name(item_name_in_path)
       
       if item 
         resp.write item.price
