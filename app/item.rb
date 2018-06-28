@@ -12,4 +12,8 @@ class Item
   def self.all 
     @@all
   end
+  
+  def self.find_by_name(name)
+    self.all.select { |item| item.name == name }.first
+  end
 end
